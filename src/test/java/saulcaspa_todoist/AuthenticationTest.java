@@ -22,9 +22,9 @@ import static io.restassured.RestAssured.given;
 
 public class AuthenticationTest {
 
-    private RequestSpecification requestSpecification;
+    private static RequestSpecification requestSpecification;
     @BeforeAll
-    public void createRequestSpecification() {
+    public static void createRequestSpecification() {
         requestSpecification = new RequestSpecBuilder()
                 .setBaseUri("https://api.todoist.com/rest/v1")
                 .setBasePath("/projects")
