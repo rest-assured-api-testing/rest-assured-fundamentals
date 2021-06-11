@@ -15,7 +15,7 @@ public class Authentication6Test {
 
         requestSpecification
                 .auth()
-                .oauth2("5703275f22fce7ac417a198be65764263fd0bf6b")
+                .oauth2("REPLACE YOUR TOKEN HERE")
                 .when()
                 .get()
                 .then()
