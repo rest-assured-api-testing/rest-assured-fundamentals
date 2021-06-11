@@ -1,12 +1,15 @@
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
-
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import com.tngtech.java.junit.dataprovider.DataProvider;
+import com.tngtech.java.junit.dataprovider.DataProviderRunner;
+import com.tngtech.java.junit.dataprovider.UseDataProvider;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
+@RunWith(DataProviderRunner.class)
 public class Parameterization2Test {
 
-    @DataProvider(name = "testProvider")
+    @DataProvider
     public static Object[][] testProvider1() {
         return new Object[][]{
                 {"us", "90210", "Beverly Hills"},
@@ -16,8 +19,8 @@ public class Parameterization2Test {
         };
     }
 
-
-    @Test(dataProvider = "testProvider")
+    @Test
+    @UseDataProvider("testProvider1")
     public void test1(String countryCode, String zipCode, String expectedResult) {
         given()
                 .pathParam("countryCode", countryCode)
