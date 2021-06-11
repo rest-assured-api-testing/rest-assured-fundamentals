@@ -1,4 +1,4 @@
-package juangonzales_dataprovider;
+package juangonzales_reqres;
 
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
-public class ResponseSpecification3Test {
+public class ResponseSpecificationTest {
 
     private ResponseSpecification responseSpecification;
 
@@ -23,13 +23,13 @@ public class ResponseSpecification3Test {
 
     @Test
     public void test2() {
-        given()
+        given().queryParam("page","2")
                 .when()
-                .get("http://zippopotam.us/us/90210")
+                .get("https://reqres.in/api/users")
                 .then()
                 .spec(responseSpecification)
                 .assertThat()
                 .log().all()
-                .body("places[0].'place name'", equalTo("Beverly Hills"));
+                .body("data[0].first_name", equalTo("Michael"));
     }
 }

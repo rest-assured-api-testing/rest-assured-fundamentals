@@ -1,4 +1,4 @@
-package juangonzales_dataprovider;
+package juangonzales_reqres;
 
 
 import static io.restassured.RestAssured.given;
