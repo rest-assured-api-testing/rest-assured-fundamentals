@@ -1,8 +1,8 @@
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
-import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+//import org.testng.Assert;
+//import org.testng.annotations.BeforeClass;
+//import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
@@ -10,14 +10,14 @@ public class ResponseExtracion5Test {
 
     private RequestSpecification requestSpecification;
 
-    @BeforeClass
+//    @BeforeClass
     public void createRequestSpecification() {
         requestSpecification = new RequestSpecBuilder()
                 .setBaseUri("http://zippopotam.us/")
                 .build();
     }
 
-    @Test
+//    @Test
     public void test2() {
         String placeName = given()
                 .spec(requestSpecification)
@@ -28,7 +28,7 @@ public class ResponseExtracion5Test {
                 .extract()
                 .path("places[0].'place name'");
 
-        Assert.assertEquals(placeName, "Beverly Hills");
+//        Assert.assertEquals(placeName, "Beverly Hills");
 
     }
 }
