@@ -10,10 +10,10 @@ repositories {
 }
 
 dependencies {
-//    testImplementation group: 'org.testng', name: 'testng', version: '7.4.0'
-    implementation 'junit:junit:4.13.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testImplementation group: 'org.testng', name: 'testng', version: '7.4.0'
+//    implementation 'junit:junit:4.13.1'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '4.4.0'
     implementation group: 'io.rest-assured', name: 'json-path', version: '4.4.0'
     implementation group: 'io.rest-assured', name: 'json-schema-validator', version: '4.4.0'
@@ -21,6 +21,6 @@ dependencies {
 }
 
 test {
-//    useTestNG()
-    useJUnitPlatform()
+    useTestNG()
+//    useJUnitPlatform()
 }
