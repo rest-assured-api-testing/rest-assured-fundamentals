@@ -10,6 +10,9 @@ repositories {
 }
 
 dependencies {
+    //    -->data-provider plugin for junit<--
+//    implementation 'junit:junit:4.13.1'
+//    testCompile 'com.tngtech.java:junit-dataprovider:1.9.3'
     testImplementation group: 'org.testng', name: 'testng', version: '7.4.0'
     testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '4.4.0'
     implementation group: 'io.rest-assured', name: 'json-path', version: '4.4.0'
