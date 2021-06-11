@@ -1,12 +1,12 @@
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+//import org.testng.annotations.DataProvider;
+//import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
 public class Parameterization2Test {
 
-    @DataProvider(name = "testProvider")
+//    @DataProvider(name = "testProvider")
     public static Object[][] testProvider1() {
         return new Object[][]{
                 {"us", "90210", "Beverly Hills"},
@@ -17,7 +17,7 @@ public class Parameterization2Test {
     }
 
 
-    @Test(dataProvider = "testProvider")
+//    @Test(dataProvider = "testProvider")
     public void test1(String countryCode, String zipCode, String expectedResult) {
         given()
                 .pathParam("countryCode", countryCode)

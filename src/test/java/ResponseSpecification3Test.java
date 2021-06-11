@@ -1,8 +1,8 @@
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.ResponseSpecification;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+//import org.testng.annotations.BeforeClass;
+//import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
@@ -11,7 +11,7 @@ public class ResponseSpecification3Test {
 
     private ResponseSpecification responseSpecification;
 
-    @BeforeClass
+    //@BeforeClass
     public void createResponseSpecification() {
         responseSpecification = new ResponseSpecBuilder()
                 .expectContentType(ContentType.JSON)
@@ -19,7 +19,7 @@ public class ResponseSpecification3Test {
                 .build();
     }
 
-    @Test
+    //@Test
     public void test2() {
         given()
                 .when()
