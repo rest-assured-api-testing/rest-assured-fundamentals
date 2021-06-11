@@ -1,3 +1,4 @@
+package DanielaSCReqres;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;
@@ -13,7 +14,7 @@ public class ResponseExtracion5Test {
     @BeforeClass
     public void createRequestSpecification() {
         requestSpecification = new RequestSpecBuilder()
-                .setBaseUri("http://zippopotam.us/")
+                .setBaseUri("https://reqres.in/")
                 .build();
     }
 
@@ -22,13 +23,13 @@ public class ResponseExtracion5Test {
         String placeName = given()
                 .spec(requestSpecification)
                 .when()
-                .get("us/90210")
+                .get("api/users/7")
                 .then()
                 .log().all()
                 .extract()
-                .path("places[0].'place name'");
+                .path("data.'email'");
 
-        Assert.assertEquals(placeName, "Beverly Hills");
+        Assert.assertEquals(placeName, "michael.lawson@reqres.in");
 
     }
 }

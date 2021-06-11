@@ -1,34 +1,29 @@
+package DanielaSCReqres;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class ResponseExtracion5Test {
-
+public class RequestSpecification3Test {
     private RequestSpecification requestSpecification;
 
     @BeforeClass
     public void createRequestSpecification() {
         requestSpecification = new RequestSpecBuilder()
-                .setBaseUri("http://zippopotam.us/")
+                .setBaseUri("https://reqres.in/")
                 .build();
     }
 
     @Test
     public void test2() {
-        String placeName = given()
+        given()
                 .spec(requestSpecification)
                 .when()
-                .get("us/90210")
+                .get("api/users/7")
                 .then()
-                .log().all()
-                .extract()
-                .path("places[0].'place name'");
-
-        Assert.assertEquals(placeName, "Beverly Hills");
-
+                .assertThat()
+                .statusCode(200);
     }
 }

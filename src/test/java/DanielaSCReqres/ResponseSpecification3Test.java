@@ -1,3 +1,4 @@
+package DanielaSCReqres;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.ResponseSpecification;
@@ -23,11 +24,11 @@ public class ResponseSpecification3Test {
     public void test2() {
         given()
                 .when()
-                .get("http://zippopotam.us/us/90210")
+                .get("https://reqres.in/api/users/7")
                 .then()
                 .spec(responseSpecification)
                 .assertThat()
                 .log().all()
-                .body("places[0].'place name'", equalTo("Beverly Hills"));
+                .body("data.'email'", equalTo("michael.lawson@reqres.in"));
     }
 }
