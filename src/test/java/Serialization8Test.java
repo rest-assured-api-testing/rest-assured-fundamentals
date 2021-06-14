@@ -14,7 +14,7 @@ public class Serialization8Test {
         project.setColor(43);
 
         given()
-                .auth().oauth2("REPLACE YOUR TOKEN HERE")
+                .auth().oauth2("01f43459372ebd473e01f786b9a66c6d0304756e")
                 .contentType(ContentType.JSON)
                 .body(project)
                 .log().body()
