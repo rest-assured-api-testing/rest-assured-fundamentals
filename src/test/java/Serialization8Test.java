@@ -14,7 +14,7 @@ public class Serialization8Test {
         project.setColor(43);
 
         given()
-                .auth().oauth2("REPLACE YOUR TOKEN HERE")
+                .auth().oauth2("560c31cc58cc2c911b2af745deaca827ee63decb")
                 .contentType(ContentType.JSON)
                 .body(project)
                 .log().body()
@@ -24,5 +24,22 @@ public class Serialization8Test {
                 .assertThat()
                 .statusCode(HttpStatus.SC_OK);
 
+    }
+
+    @Test
+    public void serializationOneParameter() {
+        Project project = new Project();
+        project.setName("Testing with one parameter");
+
+        given()
+                .auth().oauth2("560c31cc58cc2c911b2af745deaca827ee63decb")
+                .contentType(ContentType.JSON)
+                .body(project)
+                .log().body()
+                .when()
+                .post("https://api.todoist.com/rest/v1/projects")
+                .then()
+                .assertThat()
+                .statusCode(HttpStatus.SC_OK);
     }
 }
