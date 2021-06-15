@@ -14,8 +14,13 @@ dependencies {
     testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '4.4.0'
     implementation group: 'io.rest-assured', name: 'json-path', version: '4.4.0'
     implementation group: 'io.rest-assured', name: 'json-schema-validator', version: '4.4.0'
+//    implementation 'junit:junit:4.13.1'
+//    testCompile 'com.tngtech.java:junit-dataprovider:1.9.3'
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }
 
 test {
     useTestNG()
+//    useJUnitPlatform()
 }
