@@ -1,10 +1,12 @@
 package entities;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonPropertyOrder({"name", "color"})
 public class Project {
     private String name;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Integer color;
 
     public String getName() {
