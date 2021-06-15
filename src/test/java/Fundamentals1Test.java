@@ -1,10 +1,10 @@
-import org.testng.annotations.Test;
+//import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
 public class Fundamentals1Test {
-    @Test
+    //@Test
     public void test1() {
         given()
                 .when()
@@ -14,7 +14,7 @@ public class Fundamentals1Test {
                 .body("places[0].'place name'", equalTo("Beverly Hills"));
     }
 
-    @Test
+    //@Test
     public void test2() {
         given()
                 .when()
@@ -24,7 +24,7 @@ public class Fundamentals1Test {
                 .statusCode(200);
     }
 
-    @Test
+    //@Test
     public void test3() {
         given()
                 .log().all()
