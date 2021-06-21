@@ -14,15 +14,15 @@ public class RequestSpecificationTodoistTest {
     public void createRequestSpecification() {
         requestSpecification = new RequestSpecBuilder()
                 .setBaseUri("https://api.todoist.com/rest/v1/")
-                .build();
+                .build()
+                .auth()
+                .oauth2("acea0f034eb75c9d8ed7ca11d0f74376f5b7bba8");
     }
 
     @Test
     public void testRequestStatus() {
         given()
                 .spec(requestSpecification)
-                .auth()
-                .oauth2("acea0f034eb75c9d8ed7ca11d0f74376f5b7bba8")
                 .when()
                 .get("projects")
                 .then()
